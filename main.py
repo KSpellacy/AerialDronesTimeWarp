@@ -1,5 +1,4 @@
 # main.py
-
 import argparse
 
 # Phase entry points
@@ -14,6 +13,7 @@ def print_banner():
     print(line)
     print(APP_NAME + " — Controller")
     print("Modes: 'record' to capture data, 'phase1' to fly Phase 1")
+    print("Created by Keaton Spellacy... the most obviously coolest coder on the team :P")
     print(line)
     #  line "=" * 56 prints "=" 56 times
 
