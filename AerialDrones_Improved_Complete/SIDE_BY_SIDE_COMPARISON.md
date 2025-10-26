@@ -205,7 +205,7 @@ class WaypointNavigator:
 
 ### Original Approach
 ```python
-# nav/estimator.py
+# navigation/estimator.py
 def step(self):
     dx_body = float(self.drone.get_flow_x()) * self.flow_scale
     dy_body = float(self.drone.get_flow_y()) * self.flow_scale
@@ -222,7 +222,7 @@ def step(self):
 
 ### Improved Approach
 ```python
-# nav/estimator.py (enhanced)
+# navigation/estimator.py (enhanced)
 def step(self):
     dx_body = float(self.drone.get_flow_x()) * self.flow_scale
     dy_body = float(self.drone.get_flow_y()) * self.flow_scale

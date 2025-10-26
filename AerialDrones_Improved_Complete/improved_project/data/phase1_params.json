@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "competition": "Phase 1 - Basic Gate Course",
+    "description": "Single gate pass-through and landing using hybrid time-based navigation",
+    "date": "2025-10-25",
+    "version": "2.0",
+    "navigation_method": "hybrid_time_based"
+  },
+  "waypoints": [
+    {
+      "id": "start",
+      "action": "takeoff",
+      "height_cm": 80,
+      "description": "Initial takeoff to 80cm height"
+    },
+    {
+      "id": "gate_1",
+      "action": "pass_through",
+      "height_cm": 100,
+      "distance_from_previous_cm": 200,
+      "description": "First gate at 100cm height, 200cm forward from start"
+    },
+    {
+      "id": "landing_target",
+      "action": "land",
+      "height_cm": 30,
+      "distance_from_previous_cm": 150,
+      "description": "Landing target 150cm after gate, descend to 30cm before landing"
+    }
+  ],
+  "tuning": {
+    "cm_per_second": 30.0,
+    "forward_power": 30,
+    "throttle_power": 25,
+    "height_tolerance_cm": 5,
+    "height_timeout_sec": 8,
+    "flow_scale": 6.872
+  },
+  "notes": {
+    "cm_per_second": "Speed calibration - run calibrate_time_based_navigation() to determine for your drone",
+    "forward_power": "Power level for forward movement (20-40 recommended)",
+    "throttle_power": "Power level for up/down movement (20-30 recommended)",
+    "height_tolerance_cm": "Acceptable height error in cm",
+    "height_timeout_sec": "Maximum time to reach target height",
+    "flow_scale": "Optical flow calibration (backup only in hybrid mode)"
+  }
+}

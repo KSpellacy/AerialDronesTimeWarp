@@ -46,7 +46,7 @@ cp -r AerialDronesTimeWarp AerialDronesTimeWarp_backup
 ```bash
 # Copy new files to your project
 cp improved_project/phases/autonomous_flight.py phases/
-cp improved_project/nav/estimator.py nav/
+cp improved_project/navigation/estimator.py navigation/
 cp improved_project/recorder/generic_recorder.py recorder/
 cp improved_project/main.py .
 ```
