@@ -1,0 +1,31 @@
+2025-10-25 17:12:49,511 - INFO - Starting hybrid autonomous flight with config: data\phase1_params.json
+2025-10-25 17:12:49,511 - INFO - Loaded config: Phase 1 - Basic Gate Course
+2025-10-25 17:12:49,512 - INFO - Waypoints: 3
+2025-10-25 17:12:49,512 - INFO - Time-based navigation: 30.0 cm/s at power 30
+2025-10-25 17:12:50,230 - INFO - Pairing drone...
+2025-10-25 17:12:50,816 - INFO - Battery: 60%
+2025-10-25 17:12:50,816 - INFO - Processing waypoint 0: start
+2025-10-25 17:12:50,816 - INFO - Takeoff to 80 cm
+2025-10-25 17:12:57,986 - INFO - Reached target height: 79.9 cm
+2025-10-25 17:12:58,516 - INFO - Takeoff complete at 85.1 cm
+2025-10-25 17:12:58,516 - INFO - Processing waypoint 1: gate_1
+2025-10-25 17:12:58,516 - INFO - Adjusting to gate height: 100 cm for gate_1
+2025-10-25 17:12:58,858 - WARNING - No valid height readings
+2025-10-25 17:13:02,233 - WARNING - No valid height readings
+2025-10-25 17:13:02,685 - INFO - Reached target height: 96.8 cm
+2025-10-25 17:13:02,996 - INFO - Moving forward 200 cm to gate_1
+2025-10-25 17:13:02,996 - INFO - Time-based forward: 200 cm at 30.0 cm/s = 6.67 sec
+2025-10-25 17:13:09,967 - INFO - Forward movement complete: 200 cm
+2025-10-25 17:13:10,295 - INFO - Passed gate_1 at height 89.3 cm
+2025-10-25 17:13:10,295 - INFO - Processing waypoint 2: landing_target
+2025-10-25 17:13:10,295 - INFO - Approaching landing_target, distance: 150 cm
+2025-10-25 17:13:10,295 - INFO - Time-based forward: 150 cm at 30.0 cm/s = 5.00 sec
+2025-10-25 17:13:15,510 - INFO - Forward movement complete: 150 cm
+2025-10-25 17:13:16,025 - INFO - Descending to landing height: 30 cm
+2025-10-25 17:13:19,604 - WARNING - No valid height readings
+2025-10-25 17:13:20,960 - WARNING - No valid height readings
+2025-10-25 17:13:24,218 - WARNING - Height timeout. Target: 30, Current: 85.1 cm
+2025-10-25 17:13:24,731 - INFO - Executing landing
+2025-10-25 17:13:30,910 - INFO - Landing complete at landing_target
+2025-10-25 17:13:30,910 - INFO - Flight sequence complete!
+2025-10-25 17:13:31,226 - INFO - Drone disconnected

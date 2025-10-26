@@ -1,0 +1,562 @@
+2025-10-25 16:40:09,407 - INFO - Starting autonomous flight with config: data\phase1_params.json
+2025-10-25 16:40:09,407 - INFO - Loaded config: Phase 1 - Basic Gate Course
+2025-10-25 16:40:09,408 - INFO - Waypoints: 3
+2025-10-25 16:40:10,139 - INFO - Pairing drone...
+2025-10-25 16:40:10,704 - INFO - Odometry initialized with flow_scale=1.0
+2025-10-25 16:40:10,704 - INFO - Processing waypoint 0: start
+2025-10-25 16:40:15,639 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:15,639 - INFO - Odometry zeroed at z=999.9cm, θ=0.0°
+2025-10-25 16:40:15,685 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:15,687 - INFO - Takeoff complete. Pose: x=-2800.0, y=-400.0, z=539.5, theta=0.0
+2025-10-25 16:40:15,687 - INFO - Processing waypoint 1: gate_1
+2025-10-25 16:40:15,687 - INFO - Rising to 100 cm for gate_1
+2025-10-25 16:40:18,784 - INFO - Reached target height: 99.9 cm
+2025-10-25 16:40:18,784 - INFO - Moving to forward position: 200.0 cm
+2025-10-25 16:40:18,830 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:18,954 - WARNING - Rejecting outlier: vx=6453.1, vy=717.0 cm/s
+2025-10-25 16:40:18,970 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,032 - WARNING - Rejecting outlier: vx=14143.7, vy=2571.6 cm/s
+2025-10-25 16:40:19,047 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,109 - WARNING - Rejecting outlier: vx=5193.6, vy=1298.4 cm/s
+2025-10-25 16:40:19,125 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,155 - WARNING - Rejecting outlier: vx=10686.2, vy=0.0 cm/s
+2025-10-25 16:40:19,170 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,295 - WARNING - Rejecting outlier: vx=5744.0, vy=2154.0 cm/s
+2025-10-25 16:40:19,311 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,374 - WARNING - Rejecting outlier: vx=6315.7, vy=2526.3 cm/s
+2025-10-25 16:40:19,390 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,453 - WARNING - Rejecting outlier: vx=3789.7, vy=2526.5 cm/s
+2025-10-25 16:40:19,468 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,499 - WARNING - Rejecting outlier: vx=10895.6, vy=6537.4 cm/s
+2025-10-25 16:40:19,515 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,639 - WARNING - Rejecting outlier: vx=0.0, vy=7872.0 cm/s
+2025-10-25 16:40:19,654 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,717 - WARNING - Rejecting outlier: vx=1295.9, vy=6479.3 cm/s
+2025-10-25 16:40:19,733 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,795 - WARNING - Rejecting outlier: vx=1262.1, vy=1262.1 cm/s
+2025-10-25 16:40:19,811 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,843 - WARNING - Rejecting outlier: vx=10606.0, vy=21212.0 cm/s
+2025-10-25 16:40:19,858 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:19,982 - WARNING - Rejecting outlier: vx=1435.4, vy=717.7 cm/s
+2025-10-25 16:40:19,997 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,059 - WARNING - Rejecting outlier: vx=10416.8, vy=2604.2 cm/s
+2025-10-25 16:40:20,075 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,136 - WARNING - Rejecting outlier: vx=2569.8, vy=5139.6 cm/s
+2025-10-25 16:40:20,152 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,183 - WARNING - Rejecting outlier: vx=17201.3, vy=15051.2 cm/s
+2025-10-25 16:40:20,198 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,322 - WARNING - Rejecting outlier: vx=7207.0, vy=3603.5 cm/s
+2025-10-25 16:40:20,337 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,415 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,479 - WARNING - Rejecting outlier: vx=10175.0, vy=1271.9 cm/s
+2025-10-25 16:40:20,495 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,527 - WARNING - Rejecting outlier: vx=20966.3, vy=10483.1 cm/s
+2025-10-25 16:40:20,543 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,667 - WARNING - Rejecting outlier: vx=11280.8, vy=705.1 cm/s
+2025-10-25 16:40:20,682 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,746 - WARNING - Rejecting outlier: vx=10370.9, vy=15556.3 cm/s
+2025-10-25 16:40:20,761 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,824 - WARNING - Rejecting outlier: vx=1273.4, vy=1273.4 cm/s
+2025-10-25 16:40:20,839 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:20,869 - WARNING - Rejecting outlier: vx=10706.0, vy=19270.8 cm/s
+2025-10-25 16:40:20,885 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,009 - WARNING - Rejecting outlier: vx=8661.8, vy=2165.5 cm/s
+2025-10-25 16:40:21,025 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,088 - WARNING - Rejecting outlier: vx=23986.6, vy=2524.9 cm/s
+2025-10-25 16:40:21,105 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,168 - WARNING - Rejecting outlier: vx=10128.7, vy=1266.1 cm/s
+2025-10-25 16:40:21,184 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,214 - WARNING - Rejecting outlier: vx=4165.6, vy=16662.4 cm/s
+2025-10-25 16:40:21,230 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,354 - WARNING - Rejecting outlier: vx=0.0, vy=1441.1 cm/s
+2025-10-25 16:40:21,370 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,432 - WARNING - Rejecting outlier: vx=2552.1, vy=12760.7 cm/s
+2025-10-25 16:40:21,447 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,511 - WARNING - Rejecting outlier: vx=3823.3, vy=0.0 cm/s
+2025-10-25 16:40:21,526 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,556 - WARNING - Rejecting outlier: vx=2157.6, vy=6472.8 cm/s
+2025-10-25 16:40:21,572 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,698 - WARNING - Rejecting outlier: vx=2850.0, vy=2137.5 cm/s
+2025-10-25 16:40:21,713 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,776 - WARNING - Rejecting outlier: vx=1266.9, vy=0.0 cm/s
+2025-10-25 16:40:21,792 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,854 - WARNING - Rejecting outlier: vx=2571.4, vy=11571.2 cm/s
+2025-10-25 16:40:21,869 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:21,900 - WARNING - Rejecting outlier: vx=0.0, vy=2151.2 cm/s
+2025-10-25 16:40:21,916 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,042 - WARNING - Rejecting outlier: vx=3544.8, vy=4253.8 cm/s
+2025-10-25 16:40:22,057 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,120 - WARNING - Rejecting outlier: vx=2529.3, vy=6323.3 cm/s
+2025-10-25 16:40:22,136 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,199 - WARNING - Rejecting outlier: vx=2546.9, vy=5093.7 cm/s
+2025-10-25 16:40:22,215 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,245 - WARNING - Rejecting outlier: vx=10552.3, vy=10552.3 cm/s
+2025-10-25 16:40:22,261 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,385 - WARNING - Rejecting outlier: vx=7893.0, vy=2152.6 cm/s
+2025-10-25 16:40:22,401 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,463 - WARNING - Rejecting outlier: vx=2588.1, vy=0.0 cm/s
+2025-10-25 16:40:22,478 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,540 - WARNING - Rejecting outlier: vx=3901.4, vy=7802.8 cm/s
+2025-10-25 16:40:22,555 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,586 - WARNING - Rejecting outlier: vx=6478.5, vy=10797.4 cm/s
+2025-10-25 16:40:22,601 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,725 - WARNING - Rejecting outlier: vx=723.8, vy=3619.0 cm/s
+2025-10-25 16:40:22,741 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,801 - WARNING - Rejecting outlier: vx=12846.1, vy=14130.7 cm/s
+2025-10-25 16:40:22,817 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,895 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:22,926 - WARNING - Rejecting outlier: vx=10816.9, vy=19470.4 cm/s
+2025-10-25 16:40:22,942 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,066 - WARNING - Rejecting outlier: vx=2843.8, vy=711.0 cm/s
+2025-10-25 16:40:23,083 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,145 - WARNING - Rejecting outlier: vx=6450.4, vy=10320.7 cm/s
+2025-10-25 16:40:23,161 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,224 - WARNING - Rejecting outlier: vx=2492.7, vy=4985.5 cm/s
+2025-10-25 16:40:23,239 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,271 - WARNING - Rejecting outlier: vx=17331.0, vy=32495.7 cm/s
+2025-10-25 16:40:23,286 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,409 - WARNING - Rejecting outlier: vx=4320.9, vy=720.2 cm/s
+2025-10-25 16:40:23,425 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,486 - WARNING - Rejecting outlier: vx=3897.4, vy=2598.3 cm/s
+2025-10-25 16:40:23,502 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,564 - WARNING - Rejecting outlier: vx=15520.8, vy=1293.4 cm/s
+2025-10-25 16:40:23,580 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,611 - WARNING - Rejecting outlier: vx=10482.2, vy=2096.4 cm/s
+2025-10-25 16:40:23,627 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,753 - WARNING - Rejecting outlier: vx=4982.0, vy=1423.4 cm/s
+2025-10-25 16:40:23,769 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,831 - WARNING - Rejecting outlier: vx=2502.0, vy=0.0 cm/s
+2025-10-25 16:40:23,847 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,909 - WARNING - Rejecting outlier: vx=6431.7, vy=2572.7 cm/s
+2025-10-25 16:40:23,924 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:23,956 - WARNING - Rejecting outlier: vx=4353.1, vy=2176.5 cm/s
+2025-10-25 16:40:23,971 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,095 - WARNING - Rejecting outlier: vx=5019.2, vy=717.0 cm/s
+2025-10-25 16:40:24,111 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,172 - WARNING - Rejecting outlier: vx=10376.6, vy=0.0 cm/s
+2025-10-25 16:40:24,187 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,248 - WARNING - Rejecting outlier: vx=18213.9, vy=1301.0 cm/s
+2025-10-25 16:40:24,263 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,295 - WARNING - Rejecting outlier: vx=57011.1, vy=6578.2 cm/s
+2025-10-25 16:40:24,310 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,436 - WARNING - Rejecting outlier: vx=7069.1, vy=0.0 cm/s
+2025-10-25 16:40:24,451 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,514 - WARNING - Rejecting outlier: vx=3878.7, vy=1292.9 cm/s
+2025-10-25 16:40:24,528 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,592 - WARNING - Rejecting outlier: vx=2581.5, vy=1290.8 cm/s
+2025-10-25 16:40:24,608 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,639 - WARNING - Rejecting outlier: vx=16603.5, vy=0.0 cm/s
+2025-10-25 16:40:24,654 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,778 - WARNING - Rejecting outlier: vx=7178.1, vy=0.0 cm/s
+2025-10-25 16:40:24,794 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,856 - WARNING - Rejecting outlier: vx=1292.1, vy=2584.3 cm/s
+2025-10-25 16:40:24,872 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,934 - WARNING - Rejecting outlier: vx=2539.0, vy=6347.4 cm/s
+2025-10-25 16:40:24,949 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:24,980 - WARNING - Rejecting outlier: vx=6525.7, vy=4350.4 cm/s
+2025-10-25 16:40:24,996 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,119 - WARNING - Rejecting outlier: vx=716.9, vy=1433.9 cm/s
+2025-10-25 16:40:25,135 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,199 - WARNING - Rejecting outlier: vx=1285.3, vy=5141.1 cm/s
+2025-10-25 16:40:25,215 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,276 - WARNING - Rejecting outlier: vx=3805.9, vy=2537.3 cm/s
+2025-10-25 16:40:25,291 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,322 - WARNING - Rejecting outlier: vx=0.0, vy=4364.4 cm/s
+2025-10-25 16:40:25,338 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,463 - WARNING - Rejecting outlier: vx=1421.6, vy=7108.2 cm/s
+2025-10-25 16:40:25,479 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,540 - WARNING - Rejecting outlier: vx=9097.6, vy=7798.0 cm/s
+2025-10-25 16:40:25,556 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,634 - WARNING - Rejecting outlier: vx=6417.8, vy=6417.8 cm/s
+2025-10-25 16:40:25,649 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,680 - WARNING - Rejecting outlier: vx=57651.0, vy=2135.2 cm/s
+2025-10-25 16:40:25,695 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,819 - WARNING - Rejecting outlier: vx=4310.0, vy=1436.7 cm/s
+2025-10-25 16:40:25,835 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,897 - WARNING - Rejecting outlier: vx=0.0, vy=3875.7 cm/s
+2025-10-25 16:40:25,913 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:25,976 - WARNING - Rejecting outlier: vx=7690.9, vy=6409.1 cm/s
+2025-10-25 16:40:25,991 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,022 - WARNING - Rejecting outlier: vx=14758.7, vy=29517.5 cm/s
+2025-10-25 16:40:26,038 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,163 - WARNING - Rejecting outlier: vx=0.0, vy=3576.2 cm/s
+2025-10-25 16:40:26,179 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,258 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,320 - WARNING - Rejecting outlier: vx=2532.1, vy=5064.3 cm/s
+2025-10-25 16:40:26,336 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,366 - WARNING - Rejecting outlier: vx=6410.8, vy=6410.8 cm/s
+2025-10-25 16:40:26,382 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,508 - WARNING - Rejecting outlier: vx=0.0, vy=2132.6 cm/s
+2025-10-25 16:40:26,523 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,584 - WARNING - Rejecting outlier: vx=12879.6, vy=5151.9 cm/s
+2025-10-25 16:40:26,600 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,665 - WARNING - Rejecting outlier: vx=11502.8, vy=2556.2 cm/s
+2025-10-25 16:40:26,681 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,713 - WARNING - Rejecting outlier: vx=0.0, vy=4153.1 cm/s
+2025-10-25 16:40:26,729 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,853 - WARNING - Rejecting outlier: vx=3565.4, vy=8556.9 cm/s
+2025-10-25 16:40:26,869 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:26,931 - WARNING - Rejecting outlier: vx=0.0, vy=2550.2 cm/s
+2025-10-25 16:40:26,947 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,010 - WARNING - Rejecting outlier: vx=0.0, vy=1264.1 cm/s
+2025-10-25 16:40:27,026 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,057 - WARNING - Rejecting outlier: vx=10512.8, vy=6307.7 cm/s
+2025-10-25 16:40:27,072 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,197 - WARNING - Rejecting outlier: vx=5709.9, vy=1427.5 cm/s
+2025-10-25 16:40:27,212 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,275 - WARNING - Rejecting outlier: vx=3870.2, vy=2580.1 cm/s
+2025-10-25 16:40:27,291 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,353 - WARNING - Rejecting outlier: vx=10253.6, vy=1281.7 cm/s
+2025-10-25 16:40:27,369 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,400 - WARNING - Rejecting outlier: vx=16973.7, vy=4243.4 cm/s
+2025-10-25 16:40:27,416 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,540 - WARNING - Rejecting outlier: vx=2843.7, vy=0.0 cm/s
+2025-10-25 16:40:27,556 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,618 - WARNING - Rejecting outlier: vx=7760.8, vy=1293.5 cm/s
+2025-10-25 16:40:27,634 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,697 - WARNING - Rejecting outlier: vx=2553.2, vy=0.0 cm/s
+2025-10-25 16:40:27,712 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,742 - WARNING - Rejecting outlier: vx=0.0, vy=2133.1 cm/s
+2025-10-25 16:40:27,757 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,885 - WARNING - Rejecting outlier: vx=7112.9, vy=4267.8 cm/s
+2025-10-25 16:40:27,901 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:27,979 - WARNING - Rejecting outlier: vx=17093.2, vy=1068.3 cm/s
+2025-10-25 16:40:27,994 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,055 - WARNING - Rejecting outlier: vx=29442.0, vy=3840.3 cm/s
+2025-10-25 16:40:28,071 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,102 - WARNING - Rejecting outlier: vx=21505.7, vy=2150.6 cm/s
+2025-10-25 16:40:28,118 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,242 - WARNING - Rejecting outlier: vx=2142.4, vy=2856.5 cm/s
+2025-10-25 16:40:28,258 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,321 - WARNING - Rejecting outlier: vx=0.0, vy=5076.6 cm/s
+2025-10-25 16:40:28,337 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,399 - WARNING - Rejecting outlier: vx=1276.9, vy=11492.5 cm/s
+2025-10-25 16:40:28,414 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,446 - WARNING - Rejecting outlier: vx=4318.1, vy=2159.1 cm/s
+2025-10-25 16:40:28,461 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,585 - WARNING - Rejecting outlier: vx=1431.6, vy=2147.3 cm/s
+2025-10-25 16:40:28,600 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,662 - WARNING - Rejecting outlier: vx=9031.6, vy=16773.0 cm/s
+2025-10-25 16:40:28,678 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,739 - WARNING - Rejecting outlier: vx=15619.3, vy=5206.4 cm/s
+2025-10-25 16:40:28,755 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,786 - WARNING - Rejecting outlier: vx=4285.4, vy=8570.8 cm/s
+2025-10-25 16:40:28,801 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:28,926 - WARNING - Rejecting outlier: vx=1438.0, vy=1438.0 cm/s
+2025-10-25 16:40:28,941 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,003 - WARNING - Rejecting outlier: vx=3859.6, vy=5146.1 cm/s
+2025-10-25 16:40:29,018 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,081 - WARNING - Rejecting outlier: vx=0.0, vy=3840.1 cm/s
+2025-10-25 16:40:29,096 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,127 - WARNING - Rejecting outlier: vx=10856.1, vy=4342.4 cm/s
+2025-10-25 16:40:29,142 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,267 - WARNING - Rejecting outlier: vx=8602.6, vy=716.9 cm/s
+2025-10-25 16:40:29,282 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,343 - WARNING - Rejecting outlier: vx=19415.9, vy=6472.0 cm/s
+2025-10-25 16:40:29,359 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,422 - WARNING - Rejecting outlier: vx=6450.7, vy=0.0 cm/s
+2025-10-25 16:40:29,438 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,468 - WARNING - Rejecting outlier: vx=8430.6, vy=2107.6 cm/s
+2025-10-25 16:40:29,484 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,622 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,685 - WARNING - Rejecting outlier: vx=1288.7, vy=6443.5 cm/s
+2025-10-25 16:40:29,701 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,763 - WARNING - Rejecting outlier: vx=5086.0, vy=2543.0 cm/s
+2025-10-25 16:40:29,780 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,826 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:29,950 - WARNING - Rejecting outlier: vx=722.6, vy=722.6 cm/s
+2025-10-25 16:40:29,966 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,027 - WARNING - Rejecting outlier: vx=7632.8, vy=6360.7 cm/s
+2025-10-25 16:40:30,043 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,105 - WARNING - Rejecting outlier: vx=2582.6, vy=0.0 cm/s
+2025-10-25 16:40:30,120 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,151 - WARNING - Rejecting outlier: vx=28117.2, vy=4325.7 cm/s
+2025-10-25 16:40:30,168 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,308 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,370 - WARNING - Rejecting outlier: vx=2599.1, vy=2599.1 cm/s
+2025-10-25 16:40:30,385 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,447 - WARNING - Rejecting outlier: vx=2565.0, vy=6412.6 cm/s
+2025-10-25 16:40:30,462 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,493 - WARNING - Rejecting outlier: vx=25069.3, vy=25069.3 cm/s
+2025-10-25 16:40:30,509 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,634 - WARNING - Rejecting outlier: vx=7898.6, vy=2872.2 cm/s
+2025-10-25 16:40:30,650 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,712 - WARNING - Rejecting outlier: vx=1280.8, vy=2561.6 cm/s
+2025-10-25 16:40:30,728 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,790 - WARNING - Rejecting outlier: vx=11604.1, vy=1289.3 cm/s
+2025-10-25 16:40:30,806 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,837 - WARNING - Rejecting outlier: vx=23264.9, vy=2115.0 cm/s
+2025-10-25 16:40:30,852 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:30,976 - WARNING - Rejecting outlier: vx=7217.4, vy=721.7 cm/s
+2025-10-25 16:40:30,992 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,054 - WARNING - Rejecting outlier: vx=1283.9, vy=0.0 cm/s
+2025-10-25 16:40:31,070 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,132 - WARNING - Rejecting outlier: vx=5078.8, vy=1269.7 cm/s
+2025-10-25 16:40:31,147 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,179 - WARNING - Rejecting outlier: vx=8720.7, vy=0.0 cm/s
+2025-10-25 16:40:31,195 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,333 - WARNING - Rejecting outlier: vx=3860.4, vy=1286.8 cm/s
+2025-10-25 16:40:31,349 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,412 - WARNING - Rejecting outlier: vx=6401.2, vy=10241.9 cm/s
+2025-10-25 16:40:31,428 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,490 - WARNING - Rejecting outlier: vx=6348.4, vy=16505.8 cm/s
+2025-10-25 16:40:31,506 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,538 - WARNING - Rejecting outlier: vx=2170.7, vy=23877.2 cm/s
+2025-10-25 16:40:31,553 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,676 - WARNING - Rejecting outlier: vx=719.6, vy=7915.5 cm/s
+2025-10-25 16:40:31,692 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,756 - WARNING - Rejecting outlier: vx=12712.3, vy=6356.2 cm/s
+2025-10-25 16:40:31,770 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,833 - WARNING - Rejecting outlier: vx=8983.2, vy=2566.6 cm/s
+2025-10-25 16:40:31,848 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:31,879 - WARNING - Rejecting outlier: vx=34242.4, vy=2140.1 cm/s
+2025-10-25 16:40:31,895 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,020 - WARNING - Rejecting outlier: vx=1418.6, vy=5674.5 cm/s
+2025-10-25 16:40:32,036 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,099 - WARNING - Rejecting outlier: vx=0.0, vy=7573.0 cm/s
+2025-10-25 16:40:32,115 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,178 - WARNING - Rejecting outlier: vx=0.0, vy=11475.5 cm/s
+2025-10-25 16:40:32,194 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,226 - WARNING - Rejecting outlier: vx=0.0, vy=4199.3 cm/s
+2025-10-25 16:40:32,241 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,366 - WARNING - Rejecting outlier: vx=0.0, vy=4260.3 cm/s
+2025-10-25 16:40:32,381 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,443 - WARNING - Rejecting outlier: vx=1299.2, vy=24684.2 cm/s
+2025-10-25 16:40:32,459 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,520 - WARNING - Rejecting outlier: vx=2602.0, vy=5204.0 cm/s
+2025-10-25 16:40:32,536 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,567 - WARNING - Rejecting outlier: vx=4227.6, vy=33820.6 cm/s
+2025-10-25 16:40:32,583 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,708 - WARNING - Rejecting outlier: vx=2136.3, vy=1424.2 cm/s
+2025-10-25 16:40:32,724 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,786 - WARNING - Rejecting outlier: vx=6373.5, vy=2549.4 cm/s
+2025-10-25 16:40:32,802 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,864 - WARNING - Rejecting outlier: vx=2589.6, vy=3884.4 cm/s
+2025-10-25 16:40:32,880 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:32,910 - WARNING - Rejecting outlier: vx=23277.7, vy=4232.3 cm/s
+2025-10-25 16:40:32,926 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,051 - WARNING - Rejecting outlier: vx=13482.2, vy=9224.6 cm/s
+2025-10-25 16:40:33,067 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,153 - WARNING - Rejecting outlier: vx=6501.6, vy=10836.0 cm/s
+2025-10-25 16:40:33,169 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,231 - WARNING - Rejecting outlier: vx=0.0, vy=3435.7 cm/s
+2025-10-25 16:40:33,247 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,279 - WARNING - Rejecting outlier: vx=2101.0, vy=14706.8 cm/s
+2025-10-25 16:40:33,294 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,418 - WARNING - Rejecting outlier: vx=2877.0, vy=2877.0 cm/s
+2025-10-25 16:40:33,434 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,496 - WARNING - Rejecting outlier: vx=2561.1, vy=3841.7 cm/s
+2025-10-25 16:40:33,511 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,573 - WARNING - Rejecting outlier: vx=9068.6, vy=1295.5 cm/s
+2025-10-25 16:40:33,588 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,620 - WARNING - Rejecting outlier: vx=34720.5, vy=4340.1 cm/s
+2025-10-25 16:40:33,635 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,761 - WARNING - Rejecting outlier: vx=9257.2, vy=0.0 cm/s
+2025-10-25 16:40:33,778 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,839 - WARNING - Rejecting outlier: vx=8820.5, vy=15120.9 cm/s
+2025-10-25 16:40:33,855 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,917 - WARNING - Rejecting outlier: vx=10280.8, vy=10280.8 cm/s
+2025-10-25 16:40:33,933 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:33,963 - WARNING - Rejecting outlier: vx=4277.4, vy=4277.4 cm/s
+2025-10-25 16:40:33,979 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,104 - WARNING - Rejecting outlier: vx=12170.4, vy=715.9 cm/s
+2025-10-25 16:40:34,119 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,197 - WARNING - Rejecting outlier: vx=8547.0, vy=4273.5 cm/s
+2025-10-25 16:40:34,212 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,275 - WARNING - Rejecting outlier: vx=0.0, vy=3873.7 cm/s
+2025-10-25 16:40:34,290 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,321 - WARNING - Rejecting outlier: vx=0.0, vy=6474.9 cm/s
+2025-10-25 16:40:34,336 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,461 - WARNING - Rejecting outlier: vx=0.0, vy=7818.9 cm/s
+2025-10-25 16:40:34,476 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,539 - WARNING - Rejecting outlier: vx=0.0, vy=2587.7 cm/s
+2025-10-25 16:40:34,554 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,615 - WARNING - Rejecting outlier: vx=5160.0, vy=9030.1 cm/s
+2025-10-25 16:40:34,631 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,661 - WARNING - Rejecting outlier: vx=17525.5, vy=17525.5 cm/s
+2025-10-25 16:40:34,677 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,802 - WARNING - Rejecting outlier: vx=7870.0, vy=715.5 cm/s
+2025-10-25 16:40:34,818 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,881 - WARNING - Rejecting outlier: vx=6330.0, vy=8862.0 cm/s
+2025-10-25 16:40:34,896 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:34,959 - WARNING - Rejecting outlier: vx=0.0, vy=16632.4 cm/s
+2025-10-25 16:40:34,974 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,005 - WARNING - Rejecting outlier: vx=0.0, vy=23683.5 cm/s
+2025-10-25 16:40:35,021 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,146 - WARNING - Rejecting outlier: vx=1426.5, vy=8559.1 cm/s
+2025-10-25 16:40:35,162 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,223 - WARNING - Rejecting outlier: vx=6362.4, vy=16542.3 cm/s
+2025-10-25 16:40:35,239 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,301 - WARNING - Rejecting outlier: vx=3918.1, vy=1306.0 cm/s
+2025-10-25 16:40:35,317 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,348 - WARNING - Rejecting outlier: vx=6349.1, vy=10581.8 cm/s
+2025-10-25 16:40:35,364 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,488 - WARNING - Rejecting outlier: vx=0.0, vy=1417.8 cm/s
+2025-10-25 16:40:35,503 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,566 - WARNING - Rejecting outlier: vx=2605.6, vy=1302.8 cm/s
+2025-10-25 16:40:35,581 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,643 - WARNING - Rejecting outlier: vx=1281.0, vy=1281.0 cm/s
+2025-10-25 16:40:35,659 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,690 - WARNING - Rejecting outlier: vx=4305.8, vy=6458.7 cm/s
+2025-10-25 16:40:35,706 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,831 - WARNING - Rejecting outlier: vx=3538.7, vy=2831.0 cm/s
+2025-10-25 16:40:35,846 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:35,923 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,000 - WARNING - Rejecting outlier: vx=4329.3, vy=5411.7 cm/s
+2025-10-25 16:40:36,016 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,048 - WARNING - Rejecting outlier: vx=4213.5, vy=10533.7 cm/s
+2025-10-25 16:40:36,064 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,190 - WARNING - Rejecting outlier: vx=708.5, vy=0.0 cm/s
+2025-10-25 16:40:36,206 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,268 - WARNING - Rejecting outlier: vx=24002.7, vy=0.0 cm/s
+2025-10-25 16:40:36,283 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,345 - WARNING - Rejecting outlier: vx=16758.5, vy=1289.1 cm/s
+2025-10-25 16:40:36,361 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,393 - WARNING - Rejecting outlier: vx=21336.6, vy=10668.3 cm/s
+2025-10-25 16:40:36,409 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,535 - WARNING - Rejecting outlier: vx=4210.8, vy=0.0 cm/s
+2025-10-25 16:40:36,551 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,614 - WARNING - Rejecting outlier: vx=5113.6, vy=0.0 cm/s
+2025-10-25 16:40:36,630 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,693 - WARNING - Rejecting outlier: vx=19981.1, vy=3746.5 cm/s
+2025-10-25 16:40:36,709 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,757 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,882 - WARNING - Rejecting outlier: vx=3530.6, vy=0.0 cm/s
+2025-10-25 16:40:36,898 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:36,960 - WARNING - Rejecting outlier: vx=2556.5, vy=1278.3 cm/s
+2025-10-25 16:40:36,976 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,039 - WARNING - Rejecting outlier: vx=3818.0, vy=2545.4 cm/s
+2025-10-25 16:40:37,055 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,086 - WARNING - Rejecting outlier: vx=17023.2, vy=4255.8 cm/s
+2025-10-25 16:40:37,102 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,230 - WARNING - Rejecting outlier: vx=7649.1, vy=695.4 cm/s
+2025-10-25 16:40:37,246 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,323 - WARNING - Rejecting outlier: vx=9761.9, vy=1084.7 cm/s
+2025-10-25 16:40:37,338 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,400 - WARNING - Rejecting outlier: vx=14098.6, vy=1281.7 cm/s
+2025-10-25 16:40:37,415 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,447 - WARNING - Rejecting outlier: vx=4311.6, vy=2155.8 cm/s
+2025-10-25 16:40:37,463 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,588 - WARNING - Rejecting outlier: vx=1412.1, vy=706.0 cm/s
+2025-10-25 16:40:37,604 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,666 - WARNING - Rejecting outlier: vx=11514.3, vy=14073.0 cm/s
+2025-10-25 16:40:37,682 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,745 - WARNING - Rejecting outlier: vx=8920.7, vy=1274.4 cm/s
+2025-10-25 16:40:37,760 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,792 - WARNING - Rejecting outlier: vx=12766.3, vy=12766.3 cm/s
+2025-10-25 16:40:37,808 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:37,947 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,009 - WARNING - Rejecting outlier: vx=1282.1, vy=6410.5 cm/s
+2025-10-25 16:40:38,025 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,087 - WARNING - Rejecting outlier: vx=9053.4, vy=6466.7 cm/s
+2025-10-25 16:40:38,102 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,133 - WARNING - Rejecting outlier: vx=15008.5, vy=2144.1 cm/s
+2025-10-25 16:40:38,149 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,273 - WARNING - Rejecting outlier: vx=2867.5, vy=0.0 cm/s
+2025-10-25 16:40:38,288 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,350 - WARNING - Rejecting outlier: vx=25845.5, vy=1292.3 cm/s
+2025-10-25 16:40:38,365 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,428 - WARNING - Rejecting outlier: vx=1282.0, vy=0.0 cm/s
+2025-10-25 16:40:38,443 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,475 - WARNING - Rejecting outlier: vx=17353.5, vy=6507.6 cm/s
+2025-10-25 16:40:38,490 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,614 - WARNING - Rejecting outlier: vx=2848.0, vy=0.0 cm/s
+2025-10-25 16:40:38,630 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,693 - WARNING - Rejecting outlier: vx=5168.3, vy=1292.1 cm/s
+2025-10-25 16:40:38,708 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,772 - WARNING - Rejecting outlier: vx=5083.3, vy=1270.8 cm/s
+2025-10-25 16:40:38,787 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,818 - WARNING - Rejecting outlier: vx=21012.1, vy=4202.4 cm/s
+2025-10-25 16:40:38,834 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:38,958 - WARNING - Rejecting outlier: vx=2876.6, vy=2876.6 cm/s
+2025-10-25 16:40:38,974 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,036 - WARNING - Rejecting outlier: vx=3829.3, vy=10211.5 cm/s
+2025-10-25 16:40:39,051 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,114 - WARNING - Rejecting outlier: vx=2557.1, vy=1278.6 cm/s
+2025-10-25 16:40:39,129 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,160 - WARNING - Rejecting outlier: vx=4298.9, vy=17195.5 cm/s
+2025-10-25 16:40:39,175 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,300 - WARNING - Rejecting outlier: vx=4298.8, vy=1432.9 cm/s
+2025-10-25 16:40:39,315 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,378 - WARNING - Rejecting outlier: vx=21902.3, vy=3865.1 cm/s
+2025-10-25 16:40:39,394 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,456 - WARNING - Rejecting outlier: vx=17891.9, vy=2556.0 cm/s
+2025-10-25 16:40:39,472 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,503 - WARNING - Rejecting outlier: vx=16959.4, vy=10599.6 cm/s
+2025-10-25 16:40:39,519 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,643 - WARNING - Rejecting outlier: vx=2137.3, vy=7836.9 cm/s
+2025-10-25 16:40:39,658 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,721 - WARNING - Rejecting outlier: vx=1285.2, vy=19278.4 cm/s
+2025-10-25 16:40:39,737 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,816 - WARNING - Rejecting outlier: vx=2144.0, vy=16079.9 cm/s
+2025-10-25 16:40:39,831 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:39,878 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,001 - WARNING - Rejecting outlier: vx=7876.3, vy=9308.4 cm/s
+2025-10-25 16:40:40,016 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,078 - WARNING - Rejecting outlier: vx=2597.3, vy=15583.6 cm/s
+2025-10-25 16:40:40,093 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,155 - WARNING - Rejecting outlier: vx=14322.4, vy=6510.2 cm/s
+2025-10-25 16:40:40,171 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,202 - WARNING - Rejecting outlier: vx=2155.7, vy=4311.4 cm/s
+2025-10-25 16:40:40,217 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,342 - WARNING - Rejecting outlier: vx=1424.1, vy=2136.1 cm/s
+2025-10-25 16:40:40,357 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,419 - WARNING - Rejecting outlier: vx=2597.1, vy=0.0 cm/s
+2025-10-25 16:40:40,435 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,496 - WARNING - Rejecting outlier: vx=1299.5, vy=22092.2 cm/s
+2025-10-25 16:40:40,512 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,543 - WARNING - Rejecting outlier: vx=0.0, vy=6388.2 cm/s
+2025-10-25 16:40:40,558 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,683 - WARNING - Rejecting outlier: vx=6476.7, vy=5037.4 cm/s
+2025-10-25 16:40:40,698 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,760 - WARNING - Rejecting outlier: vx=11433.0, vy=2540.7 cm/s
+2025-10-25 16:40:40,776 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,838 - WARNING - Rejecting outlier: vx=10331.4, vy=5165.7 cm/s
+2025-10-25 16:40:40,853 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:40,884 - WARNING - Rejecting outlier: vx=39637.0, vy=0.0 cm/s
+2025-10-25 16:40:40,899 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,023 - WARNING - Rejecting outlier: vx=4285.9, vy=0.0 cm/s
+2025-10-25 16:40:41,038 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,101 - WARNING - Rejecting outlier: vx=6508.4, vy=3905.1 cm/s
+2025-10-25 16:40:41,117 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,179 - WARNING - Rejecting outlier: vx=7666.7, vy=14055.6 cm/s
+2025-10-25 16:40:41,194 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,225 - WARNING - Rejecting outlier: vx=8585.4, vy=15024.4 cm/s
+2025-10-25 16:40:41,241 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,365 - WARNING - Rejecting outlier: vx=710.9, vy=2132.7 cm/s
+2025-10-25 16:40:41,381 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,443 - WARNING - Rejecting outlier: vx=29819.8, vy=0.0 cm/s
+2025-10-25 16:40:41,458 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,520 - WARNING - Rejecting outlier: vx=23490.4, vy=0.0 cm/s
+2025-10-25 16:40:41,536 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,567 - WARNING - Rejecting outlier: vx=8516.4, vy=0.0 cm/s
+2025-10-25 16:40:41,582 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,721 - WARNING - Rejecting outlier: vx=13659.7, vy=0.0 cm/s
+2025-10-25 16:40:41,737 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,800 - WARNING - Rejecting outlier: vx=14022.0, vy=10197.8 cm/s
+2025-10-25 16:40:41,816 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,878 - WARNING - Rejecting outlier: vx=8841.5, vy=1263.1 cm/s
+2025-10-25 16:40:41,894 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:41,924 - WARNING - Rejecting outlier: vx=4251.1, vy=8502.2 cm/s
+2025-10-25 16:40:41,940 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,067 - WARNING - Rejecting outlier: vx=707.4, vy=9903.4 cm/s
+2025-10-25 16:40:42,082 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,144 - WARNING - Rejecting outlier: vx=2594.1, vy=2594.1 cm/s
+2025-10-25 16:40:42,159 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,220 - WARNING - Rejecting outlier: vx=1300.9, vy=2601.7 cm/s
+2025-10-25 16:40:42,235 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,267 - WARNING - Rejecting outlier: vx=0.0, vy=13117.0 cm/s
+2025-10-25 16:40:42,283 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,407 - WARNING - Rejecting outlier: vx=3563.9, vy=12117.3 cm/s
+2025-10-25 16:40:42,422 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,484 - WARNING - Rejecting outlier: vx=3869.2, vy=11607.7 cm/s
+2025-10-25 16:40:42,500 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,561 - WARNING - Rejecting outlier: vx=0.0, vy=2593.3 cm/s
+2025-10-25 16:40:42,576 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,607 - WARNING - Rejecting outlier: vx=8534.7, vy=12802.0 cm/s
+2025-10-25 16:40:42,622 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,746 - WARNING - Rejecting outlier: vx=3605.8, vy=721.2 cm/s
+2025-10-25 16:40:42,762 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:42,825 - WARNING - Rejecting outlier: vx=10218.5, vy=0.0 cm/s
+2025-10-25 16:40:42,842 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:40:43,185 - INFO - Drone disconnected

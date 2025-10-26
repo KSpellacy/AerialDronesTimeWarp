@@ -1,0 +1,37 @@
+2025-10-25 16:38:06,826 - INFO - Starting autonomous flight with config: data\phase1_params.json
+2025-10-25 16:38:06,827 - INFO - Loaded config: Phase 1 - Basic Gate Course
+2025-10-25 16:38:06,827 - INFO - Waypoints: 3
+2025-10-25 16:38:07,555 - INFO - Pairing drone...
+2025-10-25 16:38:08,124 - INFO - Odometry initialized with flow_scale=1.0
+2025-10-25 16:38:08,124 - INFO - Processing waypoint 0: start
+2025-10-25 16:38:13,045 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:38:13,045 - INFO - Odometry zeroed at z=81.5cm, θ=0.0°
+2025-10-25 16:38:13,092 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:38:13,094 - INFO - Takeoff complete. Pose: x=-800.0, y=200.0, z=79.2, theta=0.0
+2025-10-25 16:38:13,094 - INFO - Processing waypoint 1: gate_1
+2025-10-25 16:38:13,094 - INFO - Rising to 100 cm for gate_1
+2025-10-25 16:38:18,608 - INFO - Reached target height: 97.2 cm
+2025-10-25 16:38:18,608 - INFO - Moving to forward position: 200.0 cm
+2025-10-25 16:38:18,655 - WARNING - Could not read yaw, using last known value
+2025-10-25 16:38:18,655 - INFO - Reached forward target: 200.0 cm
+2025-10-25 16:38:18,655 - ERROR - Flight error: FORWARD
+Traceback (most recent call last):
+  File "C:\Users\keato\PycharmProjects\AerialDronesTimeWarp\AerialDrones_Improved_Complete\improved_project\phases\autonomous_flight.py", line 66, in execute_flight
+    self._execute_pass_through(waypoint, cumulative_distance)
+  File "C:\Users\keato\PycharmProjects\AerialDronesTimeWarp\AerialDrones_Improved_Complete\improved_project\phases\autonomous_flight.py", line 124, in _execute_pass_through
+    self.drone.go(Direction.FORWARD, 20)
+  File "C:\Users\keato\AppData\Local\Programs\Python\Python39\lib\enum.py", line 429, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: FORWARD
+2025-10-25 16:38:18,981 - INFO - Drone disconnected
+2025-10-25 16:38:18,981 - ERROR - Flight failed: FORWARD
+Traceback (most recent call last):
+  File "C:\Users\keato\PycharmProjects\AerialDronesTimeWarp\AerialDrones_Improved_Complete\improved_project\phases\autonomous_flight.py", line 283, in run
+    navigator.execute_flight()
+  File "C:\Users\keato\PycharmProjects\AerialDronesTimeWarp\AerialDrones_Improved_Complete\improved_project\phases\autonomous_flight.py", line 66, in execute_flight
+    self._execute_pass_through(waypoint, cumulative_distance)
+  File "C:\Users\keato\PycharmProjects\AerialDronesTimeWarp\AerialDrones_Improved_Complete\improved_project\phases\autonomous_flight.py", line 124, in _execute_pass_through
+    self.drone.go(Direction.FORWARD, 20)
+  File "C:\Users\keato\AppData\Local\Programs\Python\Python39\lib\enum.py", line 429, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: FORWARD
