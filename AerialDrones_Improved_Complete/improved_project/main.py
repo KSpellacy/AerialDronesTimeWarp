@@ -2,9 +2,17 @@
 """
 VEX Aerial Drones Time Warp - Autonomous Controller
 Main entry point with integrated hybrid time-based navigation support
+
+** UPDATED WITH PROPER drone.move() IMPLEMENTATION **
+Uses set_pitch() + move(duration) like calibrate_hybrid.py
 """
 import sys
 from pathlib import Path
+from recorder import generic_recorder
+from phases import autonomous_flight
+from recorder import generic_recorder
+import calibrate_hybrid
+
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -17,7 +25,7 @@ def print_header():
     """Print application header."""
     print("\n" + "=" * 70)
     print("VEX Aerial Drones Time Warp - Autonomous Controller")
-    print("Version 2.0 - Hybrid Time-Based Navigation")
+    print("Version 2.1 - Hybrid Time-Based Navigation (FIXED)")
     print("Modes:")
     print("  'record'    - Record course waypoints and parameters")
     print("  'fly'       - Execute autonomous flight using saved configuration")
@@ -54,8 +62,7 @@ def run_recorder(config_path):
     """Run the course recorder."""
     print("\n--- Recording Mode ---")
     print("Record waypoints for your autonomous flight")
-    print("⚠ Not implemented in this version")
-    print("Manually create/edit your configuration file instead.")
+    generic_recorder.run()
 
 
 def run_autonomous_flight(config_path):
@@ -63,139 +70,19 @@ def run_autonomous_flight(config_path):
     print("\n▶ Running mode: fly\n")
     print("\n--- Autonomous Flight Mode ---")
     print(f"Using configuration: {config_path}")
-
-    from phases.autonomous_flight import run
-    run(config_path=config_path)
+    autonomous_flight.main()
 
 
 def calibrate_time_based_navigation():
     """
     Calibrate time-based navigation by measuring actual distance traveled.
 
+    ** FIXED: Now uses drone.move(duration) properly **
+
     Returns:
         float: Calibrated cm_per_second value
     """
-    print(f"\n{'=' * 70}")
-    print(f"       TIME-BASED NAVIGATION CALIBRATION")
-    print(f"{'=' * 70}")
-
-    num_trials = 3
-    print(f"Trials: {num_trials}")
-    print(f"\n📋 SETUP INSTRUCTIONS:")
-    print(f"  1. Use a measuring tape to mark 100cm on the floor")
-    print(f"  2. Mark the start position clearly")
-    print(f"  3. Clear the flight path (at least 150cm)")
-    print(f"  4. Ensure good lighting")
-    print(f"\n🔧 FOR EACH TRIAL:")
-    print(f"  1. Place drone at START mark")
-    print(f"  2. Drone will take off and fly forward for 3 seconds")
-    print(f"  3. Measure ACTUAL distance from start to landing spot")
-    print(f"  4. Enter the measured distance")
-    print(f"{'=' * 70}\n")
-
-    input("Press Enter when ready to start calibration...")
-
-    # Connect to drone
-    drone = Drone()
-    drone.pair()
-
-    battery = drone.get_battery()
-    print(f"✓ Connected! Battery: {battery}%\n")
-
-    if battery < 40:
-        print("⚠️  Warning: Battery below 40%")
-        print("   Recommend charging before calibration for consistent results.\n")
-        response = input("Continue anyway? (y/n): ")
-        if response.lower() != 'y':
-            print("Calibration cancelled.")
-            drone.close()
-            return None
-
-    # Power settings
-    forward_power = 30
-    test_duration = 3.0
-
-    speeds = []
-
-    for trial in range(num_trials):
-        print(f"\n{'=' * 70}")
-        print(f"TRIAL {trial + 1}/{num_trials}")
-        print(f"{'=' * 70}")
-
-        input("📍 Position drone at START mark, then press Enter...")
-
-        # Take off
-        print("\n✈️  Taking off...")
-        drone.takeoff()
-        time.sleep(2.5)
-
-        print(f"▶️  Moving forward at power {forward_power} for {test_duration} seconds...")
-
-        # Move forward for test duration
-        drone.set_pitch(forward_power)
-        time.sleep(test_duration)
-        drone.set_pitch(0)
-
-        # Hover briefly
-        print("⏸️  Hovering...")
-        drone.hover(1)
-
-        # Land
-        print("🛬 Landing...")
-        drone.land()
-        time.sleep(2)
-
-        # Get user input for actual distance
-        print(f"\n📏 MEASURE the distance from START mark to where drone landed.")
-        while True:
-            try:
-                actual_distance = float(input(f"   Enter measured distance (cm): "))
-                if actual_distance > 0:
-                    break
-                print("   ⚠️  Please enter a positive number.")
-            except ValueError:
-                print("   ⚠️  Please enter a valid number.")
-
-        # Calculate speed
-        speed = actual_distance / test_duration
-        speeds.append(speed)
-
-        print(f"   ✓ Calculated speed: {speed:.1f} cm/s")
-        print(f"   (traveled {actual_distance:.0f} cm in {test_duration} seconds)")
-
-    drone.close()
-
-    # Calculate statistics
-    avg_speed = sum(speeds) / len(speeds)
-    std_dev = (sum((s - avg_speed) ** 2 for s in speeds) / len(speeds)) ** 0.5
-
-    print(f"\n{'=' * 70}")
-    print(f"       CALIBRATION RESULTS")
-    print(f"{'=' * 70}")
-    print(f"Individual speeds: {', '.join([f'{s:.1f} cm/s' for s in speeds])}")
-    print(f"Average speed:     {avg_speed:.1f} cm/s")
-    print(f"Standard dev:      {std_dev:.1f} cm/s")
-
-    if std_dev > 3.0:
-        print(f"\n⚠️  Warning: High variation in measurements!")
-        print(f"   Consider recalibrating for better consistency.")
-    else:
-        print(f"\n✓ Good consistency!")
-
-    print(f"\n{'=' * 70}")
-    print(f"📝 UPDATE YOUR CONFIG FILE")
-    print(f"{'=' * 70}")
-    print(f"\nAdd these values to data/phase1_params.json:")
-    print(f'\n  "tuning": {{')
-    print(f'    "cm_per_second": {avg_speed:.1f},')
-    print(f'    "forward_power": {forward_power},')
-    print(f'    "throttle_power": 25,')
-    print(f'    "height_tolerance_cm": 5,')
-    print(f'    "height_timeout_sec": 8')
-    print(f'  }}')
-    print(f"\n{'=' * 70}\n")
-
-    return avg_speed
+    calibrate_hybrid.main()
 
 
 def calibrate_optical_flow():
@@ -245,7 +132,7 @@ def run_calibration():
                 if cm_per_second:
                     print(f"\n✓ Time-based calibration complete: {cm_per_second:.1f} cm/s")
             except KeyboardInterrupt:
-                print("\n\n⚠ Calibration interrupted by user")
+                print("\n\n⚠️ Calibration interrupted by user")
             except Exception as e:
                 print(f"\n✗ Calibration error: {e}")
             break
@@ -256,7 +143,7 @@ def run_calibration():
                 flow_scale = calibrate_optical_flow()
                 print(f"\n✓ Optical flow calibration complete: {flow_scale:.3f}")
             except KeyboardInterrupt:
-                print("\n\n⚠ Calibration interrupted by user")
+                print("\n\n⚠️ Calibration interrupted by user")
             except Exception as e:
                 print(f"\n✗ Calibration error: {e}")
             break
@@ -305,7 +192,7 @@ def main():
                 break
 
     except KeyboardInterrupt:
-        print("\n\n⚠ Interrupted by user. Exiting cleanly...")
+        print("\n\n⚠️ Interrupted by user. Exiting cleanly...")
 
     except Exception as e:
         print(f"\n✗ Error: {e}")

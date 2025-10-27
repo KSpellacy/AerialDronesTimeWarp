@@ -1,0 +1,286 @@
+{
+  "mission": "Mission 2026: Time Warp - Autonomous Flight Skills",
+  "version": "1.0",
+  "duration_seconds": 180,
+  "description": "Optimized waypoint sequence for maximum autonomous scoring",
+  "coordinate_system": "Field coordinates in inches from starting position",
+  "strategy": {
+    "objective": "Complete all scoring tasks in optimal order",
+    "priority_tasks": [
+      "Takeoff",
+      "Arch Gate (under)",
+      "Keyhole Gate (through)",
+      "Tunnel (through)",
+      "Color Mat (identify)",
+      "Panel with Small Hole Bonus",
+      "Landing on Bullseye"
+    ]
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "task": "TAKEOFF",
+      "action": "takeoff",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 36
+      },
+      "description": "Take off from starting position to 3 feet altitude",
+      "duration_estimate": 3,
+      "points": "TBD - Check manual",
+      "notes": "Stable hover required before proceeding"
+    },
+    {
+      "id": 2,
+      "task": "FLY_UNDER_ARCH_GATE",
+      "action": "navigate",
+      "position": {
+        "x": 48,
+        "y": 0,
+        "z": 30
+      },
+      "description": "Fly under Blue or Red Arch Gate at low altitude",
+      "gate_clearance": {
+        "height": 30,
+        "width_center": 51
+      },
+      "duration_estimate": 5,
+      "points": "TBD - Check manual",
+      "notes": "Arch inner height is 63 inches - fly at 30 inch altitude for safety margin"
+    },
+    {
+      "id": 3,
+      "task": "APPROACH_KEYHOLE",
+      "action": "navigate",
+      "position": {
+        "x": 96,
+        "y": 24,
+        "z": 48
+      },
+      "description": "Position for Keyhole Gate approach",
+      "duration_estimate": 4,
+      "notes": "Align with center of Keyhole Gate (24 inch inner diameter)"
+    },
+    {
+      "id": 4,
+      "task": "FLY_THROUGH_KEYHOLE",
+      "action": "navigate",
+      "position": {
+        "x": 108,
+        "y": 24,
+        "z": 48
+      },
+      "description": "Fly through Green or Yellow Keyhole Gate",
+      "gate_clearance": {
+        "diameter": 24
+      },
+      "duration_estimate": 3,
+      "points": "TBD - Check manual",
+      "notes": "24 inch inner diameter - maintain centered flight path"
+    },
+    {
+      "id": 5,
+      "task": "APPROACH_TUNNEL",
+      "action": "navigate",
+      "position": {
+        "x": 144,
+        "y": 48,
+        "z": 36
+      },
+      "description": "Position for Tunnel entry",
+      "duration_estimate": 5,
+      "notes": "Tunnel diameter is 23.5 inches"
+    },
+    {
+      "id": 6,
+      "task": "FLY_THROUGH_TUNNEL",
+      "action": "navigate",
+      "position": {
+        "x": 163,
+        "y": 48,
+        "z": 36
+      },
+      "description": "Fly through Tunnel (19 inches long)",
+      "tunnel_specs": {
+        "diameter": 23.5,
+        "length": 19
+      },
+      "duration_estimate": 4,
+      "points": "TBD - Check manual",
+      "notes": "Maintain steady flight through 19 inch tunnel"
+    },
+    {
+      "id": 7,
+      "task": "APPROACH_COLOR_MAT",
+      "action": "navigate",
+      "position": {
+        "x": 192,
+        "y": 72,
+        "z": 12
+      },
+      "description": "Descend to low altitude over Color Mat",
+      "duration_estimate": 5,
+      "notes": "Color Mats are 24x24 inches - need to be low for color sensor"
+    },
+    {
+      "id": 8,
+      "task": "IDENTIFY_COLOR_MAT",
+      "action": "sensor_read",
+      "position": {
+        "x": 192,
+        "y": 72,
+        "z": 8
+      },
+      "description": "Identify color of Color Mat (red, blue, or green)",
+      "duration_estimate": 2,
+      "points": "TBD - Check manual",
+      "notes": "Hover over mat for accurate color detection"
+    },
+    {
+      "id": 9,
+      "task": "APPROACH_PANEL",
+      "action": "navigate",
+      "position": {
+        "x": 216,
+        "y": 96,
+        "z": 48
+      },
+      "description": "Position for Panel with holes",
+      "duration_estimate": 6,
+      "notes": "Panel has Large Hole (10 inch) at bottom and Small Hole (8 inch) at top"
+    },
+    {
+      "id": 10,
+      "task": "FLY_THROUGH_SMALL_HOLE",
+      "action": "navigate",
+      "position": {
+        "x": 220,
+        "y": 96,
+        "z": 60
+      },
+      "description": "Fly through Small Hole (8 inch diameter) for bonus points",
+      "hole_specs": {
+        "diameter": 8,
+        "position": "top"
+      },
+      "duration_estimate": 4,
+      "points": "TBD - Check manual + Small Hole Bonus",
+      "notes": "Small hole gives bonus points - requires precise flight control"
+    },
+    {
+      "id": 11,
+      "task": "APPROACH_LANDING_PAD",
+      "action": "navigate",
+      "position": {
+        "x": 240,
+        "y": 120,
+        "z": 36
+      },
+      "description": "Navigate to Landing Pad area",
+      "duration_estimate": 6,
+      "notes": "Landing Pad is 30 inches diameter with 10 inch bullseye"
+    },
+    {
+      "id": 12,
+      "task": "DESCEND_TO_BULLSEYE",
+      "action": "navigate",
+      "position": {
+        "x": 240,
+        "y": 120,
+        "z": 6
+      },
+      "description": "Descend precisely over bullseye center",
+      "duration_estimate": 4,
+      "notes": "Align with 10 inch bullseye for maximum landing points"
+    },
+    {
+      "id": 13,
+      "task": "LAND_ON_BULLSEYE",
+      "action": "land",
+      "position": {
+        "x": 240,
+        "y": 120,
+        "z": 0
+      },
+      "description": "Land on bullseye for maximum points",
+      "landing_target": {
+        "type": "bullseye",
+        "diameter": 10
+      },
+      "duration_estimate": 3,
+      "points": "TBD - Check manual + Bullseye bonus",
+      "notes": "Landing on bullseye (vs landing pad) should give maximum points"
+    }
+  ],
+  "timing_analysis": {
+    "total_estimated_duration": 54,
+    "time_buffer": 126,
+    "completion_percentage": 30,
+    "notes": "Leaves 2+ minutes buffer for error recovery and adjustments"
+  },
+  "optimization_notes": [
+    "Route minimizes turns and maximizes smooth transitions",
+    "Prioritizes Small Hole Bonus for additional points",
+    "Targets Bullseye landing for maximum landing points",
+    "Conservative flight path allows for sensor delays and positioning adjustments",
+    "Total path completion under 1 minute leaves ample time for multiple attempts if needed"
+  ],
+  "implementation_guidance": {
+    "sensor_requirements": [
+      "Bottom-facing distance sensor for altitude control",
+      "Color sensor for Color Mat identification",
+      "Optical flow or position tracking for precise navigation"
+    ],
+    "control_parameters": {
+      "max_speed": "moderate - prioritize accuracy over speed",
+      "hover_time": "2-3 seconds at each scoring location",
+      "position_tolerance": "±2 inches for obstacles, ±1 inch for small holes"
+    },
+    "safety_margins": {
+      "arch_gate": "Fly 30 inches high (33 inch clearance below gate)",
+      "keyhole": "Center alignment critical - 24 inch diameter",
+      "tunnel": "Maintain center line - 23.5 inch diameter",
+      "small_hole": "Requires excellent position control - only 8 inch diameter"
+    }
+  },
+  "scoring_strategy": {
+    "must_complete": [
+      "Takeoff",
+      "At least one gate passage",
+      "Landing"
+    ],
+    "high_value": [
+      "Small Hole Bonus through panel",
+      "Bullseye landing",
+      "Color mat identification"
+    ],
+    "completion_order": "Sequential - all tasks in order for maximum efficiency"
+  },
+  "field_layout_assumptions": [
+    "Skills Mission Field uses standard REC Foundation layout",
+    "Gates and obstacles arranged in sequence for efficient flow",
+    "Coordinates are estimates - must be calibrated to actual field setup",
+    "Origin (0,0,0) is drone starting position on Programming Mat"
+  ],
+  "calibration_required": [
+    "Measure actual gate positions on competition field",
+    "Test color sensor height over Color Mat",
+    "Verify tunnel alignment and approach angle",
+    "Practice small hole passage - highest difficulty task",
+    "Confirm landing pad location and bullseye alignment"
+  ],
+  "recommended_testing": [
+    "Test each waypoint individually before full run",
+    "Validate sensor readings at each scoring location",
+    "Practice small hole passage extensively (most difficult)",
+    "Test complete autonomous run at slower speeds first",
+    "Record successful parameters for competition day"
+
+  ],
+  "tuning": {
+    "cm_per_second": 26.0,
+    "forward_power": 50,
+    "throttle_power": 25
+  }
+}

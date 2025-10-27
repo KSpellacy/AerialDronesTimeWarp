@@ -1,9 +1,16 @@
-# calibrate_hybrid.py
+#!/usr/bin/env python3
 """
-Calibration script for hybrid time-based navigation system.
+Calibration script for time-based autonomous navigation.
 Run this to determine the cm_per_second value for your drone.
+
+** INTEGRATED WITH AUTONOMOUS MISSION **
+Automatically updates mission_2026_autonomous_waypoints.json with calibration results
+
+Usage:
+    python calibrate_hybrid.py
 """
 import sys
+import json
 from pathlib import Path
 
 # Add project root to Python path
@@ -25,7 +32,7 @@ def calibrate_time_based_navigation(drone, num_trials=3):
         num_trials: Number of calibration runs (default 3)
 
     Returns:
-        float: Calibrated cm_per_second value
+        dict: Calibrated parameters including cm_per_second
     """
     print(f"\n{'=' * 70}")
     print(f"       TIME-BASED NAVIGATION CALIBRATION")
@@ -46,7 +53,7 @@ def calibrate_time_based_navigation(drone, num_trials=3):
     input("Press Enter when ready to start calibration...")
 
     # Power settings
-    forward_power = 30
+    forward_power = 50
     test_duration = 3.0
 
     speeds = []
@@ -65,9 +72,11 @@ def calibrate_time_based_navigation(drone, num_trials=3):
 
         print(f"▶️  Moving forward at power {forward_power} for {test_duration} seconds...")
 
-        # Move forward for test duration
+        # TIME-BASED MOVEMENT (same as autonomous mission)
+        print("test")
         drone.set_pitch(forward_power)
-        time.sleep(test_duration)
+        drone.move(test_duration)
+        print("test")# <-- CRITICAL: Move for specified time
         drone.set_pitch(0)
 
         # Hover briefly
@@ -114,20 +123,96 @@ def calibrate_time_based_navigation(drone, num_trials=3):
     else:
         print(f"\n✓ Good consistency!")
 
-    print(f"\n{'=' * 70}")
-    print(f"📝 UPDATE YOUR CONFIG FILE")
-    print(f"{'=' * 70}")
-    print(f"\nAdd these values to data/phase1_params.json:")
-    print(f'\n  "tuning": {{')
-    print(f'    "cm_per_second": {avg_speed:.1f},')
-    print(f'    "forward_power": {forward_power},')
-    print(f'    "throttle_power": 25,')
-    print(f'    "height_tolerance_cm": 5,')
-    print(f'    "height_timeout_sec": 8')
-    print(f'  }}')
-    print(f"\n{'=' * 70}\n")
+    # Return calibration parameters
+    return {
+        'cm_per_second': round(avg_speed, 1),
+        'forward_power': forward_power,
+        'throttle_power': 25,  # Default for vertical movement
+        'test_duration': test_duration,
+        'std_dev': round(std_dev, 1),
+        'num_trials': num_trials
+    }
 
-    return avg_speed
+
+def update_json_with_calibration(json_file, tuning_params):
+    """
+    Update the mission JSON file with calibrated tuning parameters.
+
+    Args:
+        json_file: Path to mission_2026_autonomous_waypoints.json
+        tuning_params: Dictionary with calibration results
+
+    Returns:
+        bool: True if successful, False otherwise
+    """
+    try:
+        json_path = Path(json_file)
+
+        if not json_path.exists():
+            print(f"\n⚠️  File not found: {json_file}")
+            print(f"   Current directory: {Path.cwd()}")
+            return False
+
+        # Load existing JSON
+        with open(json_path, 'r') as f:
+            mission_data = json.load(f)
+
+        # Update or add tuning section
+        mission_data['tuning'] = {
+            'cm_per_second': tuning_params['cm_per_second'],
+            'forward_power': tuning_params['forward_power'],
+            'throttle_power': tuning_params['throttle_power'],
+            'calibration_info': {
+                'test_duration': tuning_params['test_duration'],
+                'std_dev': tuning_params['std_dev'],
+                'num_trials': tuning_params['num_trials'],
+                'calibration_date': time.strftime('%Y-%m-%d %H:%M:%S')
+            }
+        }
+
+        # Save updated JSON
+        with open(json_path, 'w') as f:
+            json.dump(mission_data, f, indent=2)
+
+        print(f"\n✓ Updated {json_file} with calibration data!")
+        return True
+
+    except json.JSONDecodeError as e:
+        print(f"\n✗ Error: Invalid JSON file - {e}")
+        return False
+    except Exception as e:
+        print(f"\n✗ Error updating JSON: {e}")
+        return False
+
+
+def print_summary(tuning_params, json_file):
+    """Print calibration summary and next steps."""
+    print(f"\n{'=' * 70}")
+    print(f"📝 CALIBRATION COMPLETE")
+    print(f"{'=' * 70}")
+    print(f"\nYour drone's calibrated values:")
+    print(f"  • Speed:          {tuning_params['cm_per_second']:.1f} cm/s")
+    print(f"  • Power:          {tuning_params['forward_power']}")
+    print(f"  • Consistency:    {tuning_params['std_dev']:.1f} cm/s std dev")
+
+    if Path(json_file).exists():
+        print(f"\n✓ Values saved to: {json_file}")
+    else:
+        print(f"\n⚠️  Could not find: {json_file}")
+        print(f"\nManually add these values to your JSON file:")
+        print(f'\n  "tuning": {{')
+        print(f'    "cm_per_second": {tuning_params["cm_per_second"]},')
+        print(f'    "forward_power": {tuning_params["forward_power"]},')
+        print(f'    "throttle_power": {tuning_params["throttle_power"]}')
+        print(f'  }}')
+
+    print(f"\n{'=' * 70}")
+    print(f"🚀 NEXT STEPS")
+    print(f"{'=' * 70}")
+    print(f"1. Check that {json_file} has tuning section")
+    print(f"2. Run: python autonomous_mission_time_based.py")
+    print(f"3. Your drone will use these calibrated values!")
+    print(f"{'=' * 70}\n")
 
 
 def main():
@@ -135,11 +220,15 @@ def main():
     print("\n")
     print("╔════════════════════════════════════════════════════════════════════╗")
     print("║                                                                    ║")
-    print("║          HYBRID TIME-BASED NAVIGATION CALIBRATION                 ║")
+    print("║          TIME-BASED NAVIGATION CALIBRATION                        ║")
+    print("║          For Mission 2026 Autonomous Flight                       ║")
     print("║                                                                    ║")
     print("╚════════════════════════════════════════════════════════════════════╝")
     print("\nThis calibration determines how fast your drone flies forward.")
-    print("More accurate than optical flow, and works in any environment!\n")
+    print("Results will be saved to mission_2026_autonomous_waypoints.json\n")
+
+    # JSON file to update
+    json_file = 'mission_2026_autonomous_waypoints.json'
 
     # Connect to drone
     print("Connecting to drone...")
@@ -159,15 +248,20 @@ def main():
                 return
 
         # Run calibration
-        cm_per_second = calibrate_time_based_navigation(drone, num_trials=3)
+        tuning_params = calibrate_time_based_navigation(drone, num_trials=3)
 
-        print(f"✓ Calibration complete!")
-        print(f"  Your drone's forward speed: {cm_per_second:.1f} cm/s at power 30")
+        # Update JSON file with results
+        update_json_with_calibration(json_file, tuning_params)
+
+        # Print summary
+        print_summary(tuning_params, json_file)
 
     except KeyboardInterrupt:
         print("\n\n⚠️  Calibration interrupted by user")
     except Exception as e:
         print(f"\n✗ Error during calibration: {e}")
+        import traceback
+        traceback.print_exc()
     finally:
         drone.close()
         print("\nDrone disconnected.")
