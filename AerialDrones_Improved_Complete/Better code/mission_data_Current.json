@@ -1,0 +1,11 @@
+{
+    "name": "Current Drone Mission",
+    "version": "1",
+    "waypoints": [
+        {
+            "waypoint_number": 1,
+            "pitch": 40,
+            "time_to_next_waypoint": "10"
+        }
+    ]
+}

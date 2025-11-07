@@ -1,0 +1,5 @@
+2025-10-27 15:49:50,092 - INFO - Starting autonomous flight with config: data\phase1_params.json
+2025-10-27 15:49:50,095 - INFO - Loaded config: Phase 1 - Basic Gate Course
+2025-10-27 15:49:50,095 - INFO - Waypoints: 3
+2025-10-27 15:49:50,862 - INFO - Pairing drone...
+2025-10-27 15:49:50,868 - INFO - Drone disconnected

@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "competition": "VEX Aerial Drones Time Warp",
+    "year": 25,
+    "date_recorded": "2025-10-27T16:13:43.601431",
+    "recorded_by": "Keaton",
+    "notes": "test"
+  },
+  "waypoints": [
+    {
+      "id": "start",
+      "type": "takeoff",
+      "height_cm": 0,
+      "action": "takeoff"
+    },
+    {
+      "id": "waypoint_1",
+      "type": "gate",
+      "height_cm": 0.0,
+      "distance_from_previous_cm": 0.0,
+      "action": "pass_through"
+    },
+    {
+      "id": "waypoint_2",
+      "type": "gate",
+      "height_cm": 0.0,
+      "distance_from_previous_cm": 0.0,
+      "action": "pass_through"
+    },
+    {
+      "id": "waypoint_3",
+      "type": "gate",
+      "height_cm": 0.0,
+      "distance_from_previous_cm": 0.0,
+      "action": "pass_through"
+    }
+  ],
+  "tuning": {
+    "height_tolerance_cm": 6,
+    "height_timeout_sec": 6,
+    "forward_chunk_cm": 30,
+    "forward_stop_epsilon_cm": 5.0,
+    "flow_scale": 1.0
+  }
+}
