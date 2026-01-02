@@ -1,129 +1,14 @@
 from codrone_edu.drone import Drone
+
+drone = Drone()
+drone.pair()
 import json
 import time
 import sys
 import os
 
+print("1")
 
-def _resolve(drone, names):
-    for n in names:
-        fn = getattr(drone, n, None)
-        if callable(fn):
-            return fn
-    return None
-
-def _read_hybrid_height(drone, thresh=150.0, blend_width=50.0):
-    read_rng = _resolve(drone, ["get_range","get_bottom_range","get_height_range","get_optical_flow_range"])
-    read_alt = _resolve(drone, ["get_height","get_altitude","get_barometer_height"])
-
-    rng_cm = None
-    baro_cm = None
-    if read_rng:
-        v = read_rng()
-        rng_cm = v*100 if abs(v) < 10 else float(v)
-    if read_alt:
-        v = read_alt()
-        baro_cm = v*100 if abs(v) < 10 else float(v)
-
-    if rng_cm is not None and baro_cm is None:
-        return rng_cm, 1.0, "range"
-    if baro_cm is not None and rng_cm is None:
-        return baro_cm, 0.0, "baro"
-    if rng_cm is None and baro_cm is None:
-        return 0.0, 0.5, "none"
-
-    if rng_cm <= thresh:
-        return rng_cm, 1.0, "range"
-    if rng_cm >= thresh + blend_width:
-        return baro_cm, 0.0, "baro"
-
-    t = (rng_cm - thresh) / blend_width
-    w = max(0.0, min(1.0, 1.0 - t))
-    h = w * rng_cm + (1.0 - w) * baro_cm
-    return h, w, "blend"
-
-def move_to_altitude(drone,
-                     target_cm,
-                     settle_tolerance_cm=6.0,
-                     settle_time_s=0.6,
-                     timeout_s=6.0,
-                     loop_hz=30.0,
-                     kp_range=0.10,
-                     kp_baro=0.06,
-                     kd=0.10,
-                     throttle_limits=(-18, 18)):
-    set_throttle = _resolve(drone, ["set_throttle","setThrottle"])
-    if not set_throttle:
-        raise RuntimeError("No set_throttle() available in SDK")
-
-    dt = 1.0 / loop_hz
-    prev_err = 0.0
-    settle_start = None
-    t0 = time.perf_counter()
-
-    while True:
-        h, w_range, _ = _read_hybrid_height(drone)
-        err = float(target_cm - h)
-
-        kp = w_range * kp_range + (1.0 - w_range) * kp_baro
-        derr = (err - prev_err) / dt
-        prev_err = err
-
-        u = kp * err + kd * derr
-        u = max(throttle_limits[0], min(throttle_limits[1], u))
-        if abs(err) < 2.0:
-            u = 0.0
-
-        set_throttle(int(u))
-
-        if abs(err) <= settle_tolerance_cm:
-            if settle_start is None:
-                settle_start = time.perf_counter()
-            elif time.perf_counter() - settle_start >= settle_time_s:
-                set_throttle(0)
-                return True
-        else:
-            settle_start = None
-
-        if time.perf_counter() - t0 > timeout_s:
-            set_throttle(0)
-            return False
-
-        time.sleep(dt)
-
-def hold_altitude(drone,
-                  target_cm,
-                  duration_s,
-                  loop_hz=30.0,
-                  kp_range=0.08,
-                  kp_baro=0.05,
-                  kd=0.06,
-                  throttle_limits=(-12, 12)):
-    set_throttle = _resolve(drone, ["set_throttle","setThrottle"])
-    if not set_throttle:
-        raise RuntimeError("No set_throttle() available in SDK")
-
-    dt = 1.0 / loop_hz
-    prev_err = 0.0
-    t_end = time.perf_counter() + duration_s
-
-    while time.perf_counter() < t_end:
-        h, w_range, _ = _read_hybrid_height(drone)
-        err = float(target_cm - h)
-        kp = w_range * kp_range + (1.0 - w_range) * kp_baro
-        derr = (err - prev_err) / dt
-        prev_err = err
-
-        u = kp * err + kd * derr
-        u = max(throttle_limits[0], min(throttle_limits[1], u))
-        if abs(err) < 2.0:
-            u = 0.0
-
-        set_throttle(int(u))
-        time.sleep(dt)
-
-    set_throttle(0)
-# ---------- end helpers ----------
 
 def load_mission(path="mission_data_Current.json"):
     if not os.path.exists(path):
@@ -134,68 +19,103 @@ def load_mission(path="mission_data_Current.json"):
         raise ValueError("Mission JSON must contain a 'waypoints' list.")
     return data
 
+
 def move_to_waypoints(drone, data):
+    """
+    Execute waypoints using simple time-based movement like the old code.
+    Each waypoint moves to a height, then forward with pitch for duration.
+    """
     for i, wp in enumerate(data["waypoints"]):
         pitch = int(wp.get("pitch", 0))
         duration = float(wp.get("time_to_next_waypoint", 0))
-        target_alt = float(wp.get("height_cm", 80))  # default 80cm if missing
+        target_alt_cm = float(wp.get("height_cm", 80))
 
-        # sanitize
+        # Sanitize inputs
         pitch = max(-100, min(100, pitch))
         duration = max(0.0, duration)
 
-        print(f"\n➡️ WP {i+1} | height={target_alt:.0f}cm, pitch={pitch}, time={duration:.2f}s")
+        print(f" WP {i + 1} | target_height={target_alt_cm:.0f}cm, pitch={pitch}, time={duration:.2f}s")
 
-        # 1) Go to altitude first (hybrid controller)
-        ok = move_to_altitude(drone, target_cm=target_alt, timeout_s=8.0)
-        print(f"   altitude -> {'OK' if ok else 'TIMEOUT'}")
+        # 1) Move to target altitude using vertical movement
+        # Assume we start at ~80cm after takeoff, calculate needed vertical movement
+        if i == 0:
+            # First waypoint: calculate from takeoff height (~80cm)
+            current_height = 80.0
+        else:
+            # Subsequent waypoints: use previous waypoint height
+            current_height = float(data["waypoints"][i - 1].get("height_cm", 80))
 
-        # 2) Time-based forward motion
+        height_diff_cm = target_alt_cm - current_height
+
+        if abs(height_diff_cm) > 5:  # Only adjust if difference is significant
+            # Calculate duration based on height change (rough estimate: ~50cm per second at throttle 50)
+            throttle_power = 50
+            duration = abs(height_diff_cm) / 50.0  # Adjust this ratio based on testing
+
+            if height_diff_cm > 0:
+                # Need to go UP
+                print(f"   Moving UP {height_diff_cm:.0f}cm (throttle={throttle_power}, time={duration:.2f}s)")
+                drone.set_throttle(throttle_power)
+                drone.move(duration)
+            else:
+                # Need to go DOWN
+                print(f"   Moving DOWN {abs(height_diff_cm):.0f}cm (throttle={-throttle_power}, time={duration:.2f}s)")
+                drone.set_throttle(-throttle_power)
+                drone.move(duration)
+
+            # Stop vertical movement
+            drone.set_throttle(0)
+            drone.move()
+
+            # Brief hover to stabilize
+            drone.hover(0.5)
+
+        # 2) Move forward with pitch for the specified duration
         if duration > 0 and pitch != 0:
+            print(f"   Moving forward with pitch={pitch} for {duration:.2f}s")
             drone.set_pitch(pitch)
-            time.sleep(duration)
-            drone.set_pitch(0)
+            drone.move(duration)
 
-        # 3) Brief hold to stabilize at target height
-        hold_altitude(drone, target_cm=target_alt, duration_s=0.6)
+            # Stop forward motion
+            drone.set_pitch(0)
+            drone.move()
+
+            # Brief hover to stabilize
+            drone.hover(0.3)
 
 
 def run():
+    print("2")
     try:
         data = load_mission()
         print("Mission JSON:\n" + json.dumps(data, indent=2))
 
-        drone = Drone()
-        drone.pair()
+        print("3")
 
+        # Optional calibration (if available)
         calib = getattr(drone, "calibrate", None)
         if callable(calib):
+            print("Calibrating drone...")
             calib()
             time.sleep(0.5)
 
-        get_h = getattr(drone, "get_height", None)
-        if callable(get_h):
-            baro_base = get_h()
-            if abs(baro_base) < 10:
-                baro_base *= 100
-            print(f"Barometer baseline: {baro_base:.1f} cm")
-
+        print("4 - Taking off")
         drone.takeoff()
-        time.sleep(0.8)
+        drone.hover(1.0)  # Hover for 1 second to stabilize after takeoff
 
-        # Optional initial stage height (e.g., 80 cm)
-        move_to_altitude(drone, target_cm=80, timeout_s=8.0)
-        hold_altitude(drone, target_cm=80, duration_s=1.0)
-
+        print("5 - Starting mission waypoints")
         # Run the mission waypoints
         move_to_waypoints(drone, data)
 
+        print("6 - Mission complete, landing")
         # Land
         drone.land()
         drone.close()
 
+        print("Mission complete!")
+
     except KeyboardInterrupt:
-        print("\n⏹️ Aborted by user. Landing…")
+        print("\nAborted by user. Landing…")
         try:
             drone.land()
             drone.close()
@@ -203,7 +123,9 @@ def run():
             pass
         sys.exit(1)
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"\n!!! Error: {e}")
+        import traceback
+        traceback.print_exc()
         try:
             drone.land()
             drone.close()
@@ -212,3 +134,6 @@ def run():
         sys.exit(1)
 
 
+# Don't forget to call run() to start the mission!
+if __name__ == "__main__":
+    run()

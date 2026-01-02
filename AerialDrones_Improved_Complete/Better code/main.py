@@ -1,5 +1,6 @@
 import sys
 
+
 try:
     import createJSONfile
 except ModuleNotFoundError:
@@ -12,7 +13,7 @@ except ModuleNotFoundError:
     autonCode = None
 
 BANNER = (
-    "This is the code — developed by Keaton Spellacy — for the 2025–2026 Aerial Drone Competition\n"
+    "This is the code — developed by Keaton Spellacy and Lucas Ketchel— for the 2025–2026 Aerial Drone Competition\n"
     "This code reads data from a JSON file to set the pitch and fly for a certain amount of time.\n"
     "After the code flies for a certain amount of time, it will make an odometry check and then go\n"
     "to the correct height.\n"

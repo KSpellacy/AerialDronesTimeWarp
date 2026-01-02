@@ -1,11 +1,24 @@
 {
     "name": "Current Drone Mission",
-    "version": "1",
+    "version": "1.0",
     "waypoints": [
         {
             "waypoint_number": 1,
-            "pitch": 40,
-            "time_to_next_waypoint": "10"
+            "pitch": 50,
+            "time_to_next_waypoint": 4.0,
+            "height_cm": 170.18
+        },
+        {
+            "waypoint_number": 2,
+            "pitch": 50,
+            "time_to_next_waypoint": 2.0,
+            "height_cm": 170.18
+        },
+        {
+            "waypoint_number": 3,
+            "pitch": 50,
+            "time_to_next_waypoint": 2.0,
+            "height_cm": 170.18
         }
     ]
 }
