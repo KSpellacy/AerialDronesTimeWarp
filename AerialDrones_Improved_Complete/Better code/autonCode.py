@@ -68,7 +68,7 @@ def move_to_waypoints(drone, data):
             drone.move()
 
             # Brief hover to stabilize
-            drone.hover(0.5)
+            drone.hover(1)
 
         # 2) Move forward with pitch for the specified duration
         if duration > 0 and pitch != 0:
@@ -101,7 +101,7 @@ def run():
 
         print("4 - Taking off")
         drone.takeoff()
-        drone.hover(1.0)  # Hover for 1 second to stabilize after takeoff
+        drone.hover(2.0)  # Hover for 1 second to stabilize after takeoff
 
         print("5 - Starting mission waypoints")
         # Run the mission waypoints

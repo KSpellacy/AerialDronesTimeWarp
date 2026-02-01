@@ -4,94 +4,52 @@
     "waypoints": [
         {
             "waypoint_number": 1,
-            "pitch": 50,
-            "time_to_next_waypoint": 0.6,
-            "height_cm": 160,
+            "pitch": 0,
+            "time_to_next_waypoint": 2.6,
+            "height_cm": 180,
             "description": "Takeoff and climb to Red Arch height (5 pts)"
         },
         {
             "waypoint_number": 2,
             "pitch": 50,
-            "time_to_next_waypoint": 2.5,
-            "height_cm": 160,
+            "time_to_next_waypoint": 1.0,
+            "height_cm": 180,
             "description": "Fly under Red Arch Gate - 1st pass (5 pts) [Total: 10]"
         },
         {
             "waypoint_number": 3,
             "pitch": 50,
-            "time_to_next_waypoint": 3.0,
-            "height_cm": 160,
+            "time_to_next_waypoint": 1.0,
+            "height_cm": 180,
             "description": "Continue forward through Green Keyhole - 1st pass (15 pts) [Total: 25]"
         },
         {
             "waypoint_number": 4,
             "pitch": 50,
-            "time_to_next_waypoint": 6.0,
-            "height_cm": 160,
+            "time_to_next_waypoint": 3.0,
+            "height_cm": 180,
             "description": "Continue to Tunnel entrance - 1st pass through (25 pts) [Total: 50]"
         },
         {
             "waypoint_number": 5,
-            "pitch": -50,
-            "time_to_next_waypoint": 6.0,
+            "pitch": 65,
+            "time_to_next_waypoint": 4.0,
             "height_cm": 160,
-            "description": "Return backwards through Tunnel - 2nd pass (25 pts) [Total: 75]"
+            "description": "Continue to Tunnel entrance - 1st pass through (25 pts) [Total: 50]"
         },
         {
             "waypoint_number": 6,
             "pitch": -50,
-            "time_to_next_waypoint": 3.0,
-            "height_cm": 160,
-            "description": "Return through Green Keyhole backwards - 2nd pass (15 pts) [Total: 90]"
+            "time_to_next_waypoint": 6.0,
+            "height_cm": 180,
+            "description": "Return backwards through Tunnel - 2nd pass (25 pts) [Total: 75]"
         },
         {
             "waypoint_number": 7,
-            "pitch": -50,
-            "time_to_next_waypoint": 2.5,
-            "height_cm": 160,
-            "description": "Return under Red Arch backwards - 2nd pass (5 pts) [Total: 95]"
-        },
-        {
-            "waypoint_number": 8,
             "pitch": 0,
-            "time_to_next_waypoint": 1.0,
-            "height_cm": 80,
-            "description": "Descend and prepare for Panel run"
-        },
-        {
-            "waypoint_number": 9,
-            "pitch": 50,
-            "time_to_next_waypoint": 6.0,
-            "height_cm": 80,
-            "description": "Fly to Panel, through front, out side - 1st pass (40 pts + 10 bonus if small hole) [Total: 145]"
-        },
-        {
-            "waypoint_number": 10,
-            "pitch": -50,
-            "time_to_next_waypoint": 6.0,
-            "height_cm": 80,
-            "description": "Return to Panel, fly through again - 2nd pass (40 pts + 10 bonus) [Total: 195]"
-        },
-        {
-            "waypoint_number": 11,
-            "pitch": 50,
-            "time_to_next_waypoint": 3.0,
-            "height_cm": 160,
-            "description": "Climb and fly under Blue Arch - 1st pass (5 pts) [Total: 200]"
-        },
-        {
-            "waypoint_number": 12,
-            "pitch": -50,
-            "time_to_next_waypoint": 3.0,
-            "height_cm": 160,
-            "description": "Return under Blue Arch - 2nd pass (5 pts) [Total: 205]"
-        },
-        {
-            "waypoint_number": 13,
-            "pitch": 0,
-            "time_to_next_waypoint": 1.0,
-            "height_cm": 25,
-            "description": "Descend to landing pad height and prepare to land on bullseye (15 pts) [Total: 220]"
+            "time_to_next_waypoint": 2.0,
+            "height_cm": 180,
+            "description": "Return backwards through Tunnel - 2nd pass (25 pts) [Total: 75]"
         }
     ]
 }
